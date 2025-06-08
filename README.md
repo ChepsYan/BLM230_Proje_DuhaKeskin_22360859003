@@ -435,6 +435,6 @@ console.log(errorPosition); // Hata pozisyonunu görüntüle
 
 ---
 
-**© 2024 - Duha KESKİN - Bilgisayar Mimarisi Projesi**
+**Duha KESKİN - Bilgisayar Mimarisi Projesi**
 
-Bu proje, akademik amaçlar için geliştirilmiştir ve Hamming SEC-DED kodlama algoritmasının eğitim amaçlı implementasyonunu içermektedir.
+- [Youtube](https://youtu.be/Cx3LiXM5AdI)
