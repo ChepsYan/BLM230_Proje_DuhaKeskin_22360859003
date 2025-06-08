@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamming SEC-DED Code Simülatörü</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Hamming Simülatörü</h1>
+        <div class="section">
+            <h2>📥 Veri Girişi</h2>
+            <div class="input-group">
+                <label>Bit Sayısı:</label>
+                <select id="bitSize">
+                    <option value="8">8 bit</option>
+                    <option value="16">16 bit</option>
+                    <option value="32">32 bit</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Veri (Binary):</label>
+                <input type="text" id="dataInput" placeholder="Örn: 10110010" maxlength="32">
+            </div>
+            <button onclick="encodeData()">🔐 Hamming Kodu Oluştur</button>
+            <button class="clear-btn" onclick="clearAll()">🗑️ Temizle</button>
+        </div>
+
+        <div class="section" id="encodedSection" style="display:none;">
+            <h2>🔢 Hamming Kodlu Veri</h2>
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-box" style="background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);">
+                    </div>
+                    <span>Veri Bitleri</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box" style="background: linear-gradient(135deg, #f687b3 0%, #ed64a6 100%);">
+                    </div>
+                    <span>Parity Bitleri</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box" style="background: linear-gradient(135deg, #fc8181 0%, #f56565 100%);">
+                    </div>
+                    <span>Hatalı Bit</span>
+                </div>
+            </div>
+            <div id="encodedDisplay" class="bit-display"></div>
+            <div class="result">
+                <strong>📊 Kodlanmış Veri:</strong> <span id="encodedValue"></span><br>
+                <strong>📘 Veri Bitleri:</strong> <span id="dataBitsCount"></span><br>
+                <strong>📗 Parity Bitleri:</strong> <span id="parityBitsCount"></span><br>
+                <strong>📦 Toplam Bit:</strong> <span id="totalBitsCount"></span>
+            </div>
+            <button onclick="saveToMemory()">💾 Belleğe Kaydet</button>
+            <button class="error-btn" onclick="introduceError()">⚠️ Yapay Hata Ekle</button>
+        </div>
+
+        <div class="section" id="memorySection" style="display:none;">
+            <h2>💽 Bellek Simülasyonu</h2>
+            <div id="memoryContent"></div>
+            <button onclick="readFromMemory()">🔍 Bellekten Oku ve Kontrol Et</button>
+        </div>
+
+        <div class="section" id="checkSection" style="display:none;">
+            <h2>🛡️ Hata Kontrolü ve Düzeltme</h2>
+            <div id="syndromeDisplay" class="bit-display"></div>
+            <div class="result" id="checkResult"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
